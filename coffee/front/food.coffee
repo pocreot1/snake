@@ -1,5 +1,5 @@
 class Food extends GameObject
-  color: 'green'
+  color: '#774E28'
 
   constructor: (@game) ->
     @points = []
