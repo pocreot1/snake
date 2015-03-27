@@ -1,70 +1,64 @@
-h4 {
-  margin-left: 40px;
-  font-weight: 400;
-  font-family: Helvetica, Arial, sans-serif;
-}
 body {
-  -webkit-font-smoothing: antialiased;
-  font-family: monospace;
-}
-#high_score {
-  background: #111;
+  padding: 0;
+  margin: 0;
+  background: rgb(10,10,10);
   color: white;
-  font-size: 1.3em;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Geneva, Helvetica, Arial, sans-serif;
 }
-#high_score span {
+a {
   font-weight: bold;
+  color: white;
+}
+.flex {
+  background: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.flex_child {
+  padding: 0 10px;
 }
 #game {
-  border: 3px solid #111;
-  border-top: 20px solid #111;
-  border-radius: 5px;
+  user-select: none;
+  cursor: default;
+  border: 3px solid black;
+  border-top: 32px solid black;
+  border-radius: 2px;
   margin: 30px auto;
   position: relative;
-  box-shadow: 0 0 30px #111;
 }
 #game_canvas {
-  background: #111;
+  background: #406722;
 }
-#close, #full, #min {
-  border: 1px solid #000;
-  width: 10px;
-  height: 10px;
-  background: red;
-  border-radius: 50%;
-  position: absolute;
-  left: 5px;
-  top: -15px;
-  z-index: 2;
-}
-#full {
-  left: 35px;
-  background: green;
-}
-#min {
-  left: 20px;
-  background: yellow;
-}
-#title, #right {
-  font-size: 16px;
+#title, .right, .left {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
   position: absolute;
   width: 100%;
-  top: -18px;
+  top: -24px;
 }
 #title {
   text-align: center;
-  color: #fff;
+  color: #999;
+  font-weight: normal;
 }
-#right {
+.right {
   right: 5px;
 }
+.left {
+  left: 30px;
+}
 #speed, #score {
+  position: relative;
   float: right;
-  margin-left: 5px; 
+  margin-left: 35px; 
+}
+#high_score {
+  position: relative;
+  float: left;
+  color: red;
 }
 #score {
   color: green;
@@ -73,17 +67,17 @@ body {
   color: yellow;
 }
 #msg_top, #msg_bottom {
-  padding: 10px;
-  background: rgba(0,0,0,.85);
-  color: white;
+  font-size: 0.8em;
+  padding: 10px 0;
+  background: rgba(194,136,215,0.85);
+  color: #271641;
   width: 60%;
   margin: 20%;
   margin-bottom: 10%;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 2px;
   text-align: center;
   transition: opacity 0.2s ease-out, bottom 0.3s ease-out;
-  box-shadow: 0 0 30px #111;
 }
 #msg_top {
   margin-bottom: 30%;
@@ -95,4 +89,21 @@ body {
 .msg_show {
   bottom: 10px;
   opacity: 1;
+}
+.icon {
+  position: absolute;
+  fill: white;
+  left: -25px;
+  top: -2px;
+  width: 20px;
+  height: 20px;
+}
+#high_score .icon {
+  fill: red;
+}
+#speed .icon {
+  fill: yellow;
+}
+#score .icon {
+  fill: green;
 }
