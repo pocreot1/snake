@@ -1,5 +1,13 @@
 class Map
-  color: '#79BF40'
+  color: null
+  colors: [
+    '#79BF40'
+    '#D7D588'
+    '#86D581'
+    '#669ECC'
+    '#76822B'
+  ]
+  changes: 0
 
   constructor: (@game) ->
     @points = []
@@ -47,6 +55,13 @@ class Map
 
   update: (point) ->
     @updated.push point if point not in @updated
+
+  change_color: ->
+    i = @changes % @colors.length
+    @changes += 1
+    for point in @free
+      @update point
+    @color = @colors[i]
 
   draw: ->
     while @updated.length > 0
